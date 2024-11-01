@@ -20,55 +20,52 @@
         .regu-box {
             width: 200px;
             height: 200px;
-            background-image: url(reguA.png);
             display: flex;
             flex-direction: column;
             align-items: center;
             justify-content: end;
             border-radius: 8px;
-            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
             font-family: Arial, sans-serif;
         }
 
-        .regu-box-A {
-            width: 400px;
-            height: 200px;
+        .regu-ABack {
+            background-image: url(reguABack.png);
+        }
+        .regu-BBack {
+            background-image: url(reguBBack.png);
+        }
+
+        .regu-CBack {
+            background-image: url(reguCBack.png);
+        }
+
+        .regu-DBack {
+            background-image: url(reguDBack.png);
+        }
+
+        .regu-EBack {
+            background-image: url(reguEBack.png);
+        }
+
+        /* Gambar regu */
+        .regu-A {
             background-image: url(reguA.png);
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: end;
-            border-radius: 8px;
-            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
-            font-family: Arial, sans-serif;
-            display: none;
         }
-        .regu-box-B {
-            width: 400px;
-            height: 200px;
-            background-image: url(reguA.png);
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: end;
-            border-radius: 8px;
-            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
-            font-family: Arial, sans-serif;
+        .regu-B {
+            background-image: url(reguB.png);
         }
 
-        /* Bagian atas hijau */
-        /* .regu-title {
-            background-color: #4CAF50;
-            color: white;
-            width: 100%;
-            text-align: center;
-            padding: 5px 0;
-            font-weight: bold;
-            font-size: 18px;
-            border-top-left-radius: 8px;
-            border-top-right-radius: 8px;
-        } */
+        .regu-C {
+            background-image: url(reguC.png);
+        }
 
+        .regu-D {
+            background-image: url(reguD.png);
+        }
+
+        .regu-E {
+            background-image: url(reguE.png);
+        }
         /* Container untuk skor */
         .score-container {
             overflow: hidden;
@@ -108,7 +105,7 @@
         }
 
         h3 {
-            color: aqua;
+            color: rgb(221, 241, 0);
         }
 
         .moveToLeft {
@@ -130,6 +127,47 @@
                 transform: translateX(-1200px)
             }
         }
+
+        .regu-box {
+            perspective: 1000px;
+            /* Perspektif untuk efek 3D */
+        }
+
+        .card-inner {
+            position: relative;
+            width: 100%;
+            height: 100%;
+            transform-style: preserve-3d;
+            transition: transform 0.6s;
+            border-radius: 8px;
+        }
+
+        .card-front,
+        .card-back {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            backface-visibility: hidden;
+            border-radius: 8px;
+        }
+
+        .card-front {
+            /* Ganti sesuai regu */
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .card-back {
+            transform: rotateY(180deg);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .regu-box.flipped .card-inner {
+            transform: rotateY(180deg);
+        }
     </style>
 </head>
 
@@ -137,50 +175,76 @@
 
     <div class="container cssanimation moveFromLeft " id="animatedContainer">
         <!-- Regu A sampai Regu E -->
-        <div class="regu-box">
-            <!-- <div class="regu-title">Regu A</div> -->
-            <div class="score-container">
-                <div id="scoreA" class="score">0</div>
+        <div class="regu-box ">
+            <div class="card-inner">
+                <div class="card-front regu-A">
+                    <!-- Konten depan, misalnya, judul atau gambar -->
+                    <div class="score-container">
+                        <div id="scoreA" class="score">0</div>
+                    </div>
+                </div>
+                <div class="card-back regu-ABack">
+                    <!-- Konten belakang, misalnya, deskripsi -->
+                </div>
             </div>
         </div>
-        <div class="regu-box">
-            <div class="score-container">
-                <div id="scoreB" class="score">0</div>
+
+        <div class="regu-box ">
+            <div class="card-inner">
+                <div class="card-front regu-B">
+                    <!-- Konten depan, misalnya, judul atau gambar -->
+                    <div class="score-container">
+                        <div id="scoreB" class="score">0</div>
+                    </div>
+                </div>
+                <div class="card-back regu-BBack">
+                    <!-- Konten belakang, misalnya, deskripsi -->
+                </div>
             </div>
         </div>
-        <div class="regu-box">
-            <div class="score-container">
-                <div id="scoreC" class="score">0</div>
+
+        <div class="regu-box ">
+            <div class="card-inner">
+                <div class="card-front regu-C">
+                    <!-- Konten depan, misalnya, judul atau gambar -->
+                    <div class="score-container">
+                        <div id="scoreC" class="score">0</div>
+                    </div>
+                </div>
+                <div class="card-back regu-CBack">
+                    <!-- Konten belakang, misalnya, deskripsi -->
+                </div>
             </div>
         </div>
-        <div class="regu-box">
-            <div class="score-container">
-                <div id="scoreD" class="score">0</div>
+
+        <div class="regu-box ">
+            <div class="card-inner">
+                <div class="card-front regu-D">
+                    <!-- Konten depan, misalnya, judul atau gambar -->
+                    <div class="score-container">
+                        <div id="scoreD" class="score">0</div>
+                    </div>
+                </div>
+                <div class="card-back regu-DBack">
+                    <!-- Konten belakang, misalnya, deskripsi -->
+                </div>
             </div>
         </div>
-        <div class="regu-box">
-            <div class="score-container">
-                <div id="scoreE" class="score">0</div>
+        
+        <div class="regu-box ">
+            <div class="card-inner">
+                <div class="card-front regu-E">
+                    <!-- Konten depan, misalnya, judul atau gambar -->
+                    <div class="score-container">
+                        <div id="scoreE" class="score">0</div>
+                    </div>
+                </div>
+                <div class="card-back regu-EBack">
+                    <!-- Konten belakang, misalnya, deskripsi -->
+                </div>
             </div>
         </div>
     </div>
-
-<div class="container">
-    <div class="regu-box-A">
-        <div class="score-container">
-            <div id="scoreA" class="score">0</div>
-        </div>
-    </div>
-</div>
-<div class="container cssanimation moveFromLeft">
-    <div class="regu-box-B">
-        <div class="score-container">
-            <div id="scoreA" class="score">0</div>
-        </div>
-    </div>
-</div>
-
-
 
     <div class="row">
         <!-- Tombol untuk menambah dan mengurangi skor -->
@@ -292,7 +356,22 @@
     <div style="text-align:center; margin-top:20px;">
         <button onclick="toggleAnimation()">Peudep Animasi</button>
     </div>
+    <div style="text-align: center; margin-top: 20px;">
+        <button onclick="flipAllCards()">Flip Semua Card</button>
+    </div>
+
     <script type="text/javascript">
+        // function flipCard(element) {
+        //     element.classList.toggle("flipped");
+        // }
+
+        function flipAllCards() {
+            const reguBoxes = document.querySelectorAll('.regu-box');
+            reguBoxes.forEach(box => {
+                box.classList.toggle('flipped');
+            });
+        }
+
         // Inisialisasi skor untuk setiap tim
         let scores = {
             A: 0,
@@ -346,6 +425,8 @@
                 container.classList.add("moveFromLeft");
             }
         }
+
+
 
     </script>
 
