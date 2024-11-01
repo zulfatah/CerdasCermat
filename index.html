@@ -7,6 +7,15 @@
     <title>Design Example</title>
     <link href="https://cdn.jsdelivr.net/gh/yesiamrocks/cssanimation.io@1.0.3/cssanimation.min.css" rel="stylesheet">
     <style>
+        @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+        body {
+            font-family: "Montserrat", sans-serif;
+            font-optical-sizing: auto;
+            font-weight: 700;
+            font-style: normal;
+        }
+
         /* Container utama */
         .container {
             display: flex;
@@ -18,8 +27,8 @@
 
         /* Kotak regu */
         .regu-box {
-            width: 200px;
-            height: 200px;
+            width: 400px;
+            height: 400px;
             display: flex;
             flex-direction: column;
             align-items: center;
@@ -32,59 +41,73 @@
             background-image: url(reguABack.png);
             background-size: cover;
         }
+
         .regu-BBack {
             background-image: url(reguBBack.png);
+            background-size: cover;
         }
 
         .regu-CBack {
             background-image: url(reguCBack.png);
+            background-size: cover;
         }
 
         .regu-DBack {
             background-image: url(reguDBack.png);
+            background-size: cover;
         }
 
         .regu-EBack {
             background-image: url(reguEBack.png);
+            background-size: cover;
         }
 
         /* Gambar regu */
         .regu-A {
             background-image: url(reguA.png);
+            background-size: cover;
         }
+
         .regu-B {
             background-image: url(reguB.png);
+            background-size: cover;
         }
 
         .regu-C {
             background-image: url(reguC.png);
+            background-size: cover;
         }
 
         .regu-D {
             background-image: url(reguD.png);
+            background-size: cover;
         }
 
         .regu-E {
             background-image: url(reguE.png);
+            background-size: cover;
         }
+
         /* Container untuk skor */
         .score-container {
+
             overflow: hidden;
             height: 100px;
-            width: 140px;
+            width: 300px;
             position: relative;
             display: flex;
             justify-content: center;
             align-items: center;
+            margin-top: 150px;
         }
 
         /* Gaya untuk skor */
         .score {
-            font-size: 3em;
+            font-size: 6em;
             position: absolute;
             top: 0;
             transition: top 0.5s ease-out;
-            color: #333;
+            color: #ffffff;
         }
 
         .row {
@@ -101,12 +124,15 @@
             padding: 10px 20px;
             border-radius: 5px;
             cursor: pointer;
-            font-size: 16px;
+            font-size: 32px;
             transition: background-color 0.3s ease;
+            min-width: 100px;
+            height: 80px;
         }
 
         h3 {
             color: rgb(221, 241, 0);
+            font-size: 32px;
         }
 
         .moveToLeft {
@@ -115,7 +141,7 @@
 
         @keyframes moveToLeft {
             to {
-                transform: translateX(-1600px)
+                transform: translateX(-2500px)
             }
         }
 
@@ -125,7 +151,7 @@
 
         @keyframes moveFromLeft {
             from {
-                transform: translateX(-1600px)
+                transform: translateX(-2500px)
             }
         }
 
@@ -231,7 +257,7 @@
                 </div>
             </div>
         </div>
-        
+
         <div class="regu-box ">
             <div class="card-inner">
                 <div class="card-front regu-E">
@@ -355,12 +381,12 @@
         </div>
     </div>
     <div class="row">
-    <div style="text-align:center; margin-top:20px;">
-        <button onclick="toggleAnimation()">Peudep Animasi</button>
-    </div>
-    <div style="text-align: center; margin-top: 20px;">
-        <button onclick="flipAllCards()">Balek Keu</button>
-    </div>
+        <div style="text-align:center; margin-top:20px;">
+            <button onclick="toggleAnimation()">Peudep Animasi</button>
+        </div>
+        <div style="text-align: center; margin-top: 20px;">
+            <button onclick="flipAllCards()">Balek Keu</button>
+        </div>
     </div>
 
     <script type="text/javascript">
