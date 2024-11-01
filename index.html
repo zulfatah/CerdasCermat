@@ -1,0 +1,354 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Design Example</title>
+    <link href="https://cdn.jsdelivr.net/gh/yesiamrocks/cssanimation.io@1.0.3/cssanimation.min.css" rel="stylesheet">
+    <style>
+        /* Container utama */
+        .container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            justify-content: center;
+            padding: 20px;
+        }
+
+        /* Kotak regu */
+        .regu-box {
+            width: 200px;
+            height: 200px;
+            background-image: url(reguA.png);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: end;
+            border-radius: 8px;
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+            font-family: Arial, sans-serif;
+        }
+
+        .regu-box-A {
+            width: 400px;
+            height: 200px;
+            background-image: url(reguA.png);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: end;
+            border-radius: 8px;
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+            font-family: Arial, sans-serif;
+            display: none;
+        }
+        .regu-box-B {
+            width: 400px;
+            height: 200px;
+            background-image: url(reguA.png);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: end;
+            border-radius: 8px;
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+            font-family: Arial, sans-serif;
+        }
+
+        /* Bagian atas hijau */
+        /* .regu-title {
+            background-color: #4CAF50;
+            color: white;
+            width: 100%;
+            text-align: center;
+            padding: 5px 0;
+            font-weight: bold;
+            font-size: 18px;
+            border-top-left-radius: 8px;
+            border-top-right-radius: 8px;
+        } */
+
+        /* Container untuk skor */
+        .score-container {
+            overflow: hidden;
+            height: 100px;
+            width: 140px;
+            position: relative;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        /* Gaya untuk skor */
+        .score {
+            font-size: 3em;
+            position: absolute;
+            top: 0;
+            transition: top 0.5s ease-out;
+            color: #333;
+        }
+
+        .row {
+            display: flex;
+            gap: 30px;
+            justify-content: center;
+            align-items: center;
+        }
+
+        button {
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+            transition: background-color 0.3s ease;
+        }
+
+        h3 {
+            color: aqua;
+        }
+
+        .moveToLeft {
+            animation-name: moveToLeft
+        }
+
+        @keyframes moveToLeft {
+            to {
+                transform: translateX(-1200px)
+            }
+        }
+
+        .moveFromLeft {
+            animation-name: moveFromLeft
+        }
+
+        @keyframes moveFromLeft {
+            from {
+                transform: translateX(-1200px)
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="container cssanimation moveFromLeft " id="animatedContainer">
+        <!-- Regu A sampai Regu E -->
+        <div class="regu-box">
+            <!-- <div class="regu-title">Regu A</div> -->
+            <div class="score-container">
+                <div id="scoreA" class="score">0</div>
+            </div>
+        </div>
+        <div class="regu-box">
+            <div class="score-container">
+                <div id="scoreB" class="score">0</div>
+            </div>
+        </div>
+        <div class="regu-box">
+            <div class="score-container">
+                <div id="scoreC" class="score">0</div>
+            </div>
+        </div>
+        <div class="regu-box">
+            <div class="score-container">
+                <div id="scoreD" class="score">0</div>
+            </div>
+        </div>
+        <div class="regu-box">
+            <div class="score-container">
+                <div id="scoreE" class="score">0</div>
+            </div>
+        </div>
+    </div>
+
+<div class="container">
+    <div class="regu-box-A">
+        <div class="score-container">
+            <div id="scoreA" class="score">0</div>
+        </div>
+    </div>
+</div>
+<div class="container cssanimation moveFromLeft">
+    <div class="regu-box-B">
+        <div class="score-container">
+            <div id="scoreA" class="score">0</div>
+        </div>
+    </div>
+</div>
+
+
+
+    <div class="row">
+        <!-- Tombol untuk menambah dan mengurangi skor -->
+        <div class="box">
+            <div style="text-align:center; margin-top:20px;">
+                <h3>REGU A</h3>
+            </div>
+            <div class="button-container" style="text-align:center; margin-top:20px;">
+                <button onclick="changeScore('A', 100)">+100</button>
+                <button onclick="changeScore('A', -100)">-100</button>
+                <button onclick="changeScore('A', 75)">+75</button>
+                <button onclick="changeScore('A', -75)">-75</button>
+                <!-- Tambah tombol sesuai kebutuhan untuk setiap tim -->
+            </div>
+            <div class="button-container" style="text-align:center; margin-top:20px;">
+                <button onclick="changeScore('A', 50)">+50</button>
+                <button onclick="changeScore('A', -50)">-50</button>
+                <button onclick="changeScore('A', 25)">+25</button>
+                <button onclick="changeScore('A', -25)">-25</button>
+                <!-- Tambah tombol sesuai kebutuhan untuk setiap tim -->
+            </div>
+        </div>
+        <div class="box">
+            <!-- Tombol untuk menambah dan mengurangi skor -->
+            <div style="text-align:center; margin-top:20px;">
+                <h3>REGU B</h3>
+            </div>
+            <div class="button-container" style="text-align:center; margin-top:20px;">
+                <button onclick="changeScore('B', 100)">+100</button>
+                <button onclick="changeScore('B', -100)">-100</button>
+                <button onclick="changeScore('B', 75)">+75</button>
+                <button onclick="changeScore('B', -75)">-75</button>
+                <!-- Tambah tombol sesuai kebutuhan untuk setiap tim -->
+            </div>
+            <div class="button-container" style="text-align:center; margin-top:20px;">
+                <button onclick="changeScore('B', 50)">+50</button>
+                <button onclick="changeScore('B', -50)">-50</button>
+                <button onclick="changeScore('B', 25)">+25</button>
+                <button onclick="changeScore('B', -25)">-25</button>
+                <!-- Tambah tombol sesuai kebutuhan untuk setiap tim -->
+            </div>
+        </div>
+
+        <div class="box">
+            <!-- Tombol untuk menambah dan mengurangi skor -->
+            <div style="text-align:center; margin-top:20px;">
+                <h3>REGU C</h3>
+            </div>
+            <div class="button-container" style="text-align:center; margin-top:20px;">
+                <button onclick="changeScore('C', 100)">+100</button>
+                <button onclick="changeScore('C', -100)">-100</button>
+                <button onclick="changeScore('C', 75)">+75</button>
+                <button onclick="changeScore('C', -75)">-75</button>
+                <!-- Tambah tombol sesuai kebutuhan untuk setiap tim -->
+            </div>
+            <div class="button-container" style="text-align:center; margin-top:20px;">
+                <button onclick="changeScore('C', 50)">+50</button>
+                <button onclick="changeScore('C', -50)">-50</button>
+                <button onclick="changeScore('C', 25)">+25</button>
+                <button onclick="changeScore('C', -25)">-25</button>
+                <!-- Tambah tombol sesuai kebutuhan untuk setiap tim -->
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="box">
+            <!-- Tombol untuk menambah dan mengurangi skor -->
+            <div style="text-align:center; margin-top:20px;">
+                <h3>REGU D</h3>
+            </div>
+            <div class="button-container" style="text-align:center; margin-top:20px;">
+                <button onclick="changeScore('D', 100)">+100</button>
+                <button onclick="changeScore('D', -100)">-100</button>
+                <button onclick="changeScore('D', 75)">+75</button>
+                <button onclick="changeScore('D', -75)">-75</button>
+                <!-- Tambah tombol sesuai kebutuhan untuk setiap tim -->
+            </div>
+            <div class="button-container" style="text-align:center; margin-top:20px;">
+                <button onclick="changeScore('D', 50)">+50</button>
+                <button onclick="changeScore('D', -50)">-50</button>
+                <button onclick="changeScore('D', 25)">+25</button>
+                <button onclick="changeScore('D', -25)">-25</button>
+                <!-- Tambah tombol sesuai kebutuhan untuk setiap tim -->
+            </div>
+        </div>
+
+        <div class="box">
+            <!-- Tombol untuk menambah dan mengurangi skor -->
+            <div style="text-align:center; margin-top:20px;">
+                <h3>REGU E</h3>
+            </div>
+            <div class="button-container" style="text-align:center; margin-top:20px;">
+                <button onclick="changeScore('E', 100)">+100</button>
+                <button onclick="changeScore('E', -100)">-100</button>
+                <button onclick="changeScore('E', 75)">+75</button>
+                <button onclick="changeScore('E', -75)">-75</button>
+                <!-- Tambah tombol sesuai kebutuhan untuk setiap tim -->
+            </div>
+            <div class="button-container" style="text-align:center; margin-top:20px;">
+                <button onclick="changeScore('E', 50)">+50</button>
+                <button onclick="changeScore('E', -50)">-50</button>
+                <button onclick="changeScore('E', 25)">+25</button>
+                <button onclick="changeScore('E', -25)">-25</button>
+                <!-- Tambah tombol sesuai kebutuhan untuk setiap tim -->
+            </div>
+        </div>
+    </div>
+    <div style="text-align:center; margin-top:20px;">
+        <button onclick="toggleAnimation()">Peudep Animasi</button>
+    </div>
+    <script type="text/javascript">
+        // Inisialisasi skor untuk setiap tim
+        let scores = {
+            A: 0,
+            B: 0,
+            C: 0,
+            D: 0,
+            E: 0
+        };
+
+        function changeScore(team, value) {
+            // Update skor tim
+            scores[team] += value;
+
+            const scoreElement = document.getElementById(`score${team}`);
+
+            // Jika nilai positif, animasi dari atas ke bawah
+            if (value > 0) {
+                scoreElement.style.top = "-100%";
+            } else {
+                scoreElement.style.top = "100%";
+            }
+
+            setTimeout(() => {
+                // Set posisi untuk mulai transisi
+                scoreElement.style.transition = "none";
+
+                // Posisi ulang sesuai arah animasi
+                scoreElement.style.top = value > 0 ? "100%" : "-100%";
+
+                // Update skor pada elemen HTML
+                scoreElement.textContent = scores[team];
+
+                // Kembalikan posisi ke normal
+                setTimeout(() => {
+                    scoreElement.style.transition = "top 0.5s ease-out";
+                    scoreElement.style.top = "0";
+                }, 50);
+            }, 500);
+        }
+
+        function toggleAnimation() {
+            const container = document.getElementById("animatedContainer");
+
+            // Cek jika memiliki kelas 'moveFromLeft', ganti menjadi 'moveToLeft'
+            if (container.classList.contains("moveFromLeft")) {
+                container.classList.remove("moveFromLeft");
+                container.classList.add("moveToLeft");
+            } else {
+                // Kembali ke animasi 'moveFromLeft' jika tombol diklik lagi
+                container.classList.remove("moveToLeft");
+                container.classList.add("moveFromLeft");
+            }
+        }
+
+    </script>
+
+</body>
+
+</html>
